@@ -10,13 +10,12 @@
         :root {
             --white: #ffffff;
             --white-soft: rgba(255, 255, 255, 0.08);
-            --glass: rgba(0, 37, 0, 0.78);
-            --glass-soft: rgba(4, 52, 8, 0.72);
-            --border: rgba(255, 255, 255, 0.2);
+            --glass: rgba(5, 56, 27, 0.88);
+            --border: rgba(255, 255, 255, 0.18);
             --muted: rgba(255, 255, 255, 0.82);
             --green: #087f3b;
             --red: #c62828;
-            --transition: 0.3s ease-in-out;
+            --transition: 0.25s ease;
             font-size: 16px;
         }
 
@@ -30,20 +29,11 @@
 
         body {
             font-family: "Tajawal", "Segoe UI", sans-serif;
-            background: linear-gradient(135deg, rgba(8, 127, 59, 0.92), rgba(255, 255, 255, 0.92)), url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+            background: linear-gradient(135deg, #05532a, #0b2817);
             color: var(--white);
             line-height: 1.7;
             overflow-x: hidden;
             min-height: 100vh;
-            position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
         }
 
         a {
@@ -78,7 +68,7 @@
         .ticker-track {
             display: inline-flex;
             white-space: nowrap;
-            animation: ticker 18s linear infinite;
+            animation: ticker 16s linear infinite;
             padding: 10px 0;
             gap: 50px;
             font-weight: 600;
@@ -103,11 +93,10 @@
             align-items: center;
             justify-content: space-between;
             gap: 18px;
-            padding: 16px 24px;
+            padding: 14px 20px;
             background: var(--glass);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
+            border-radius: 18px;
         }
 
         .brand {
@@ -139,12 +128,12 @@
         .nav-links a:hover { color: #c8f5dd; }
 
         .glass-panel {
-            background: var(--glass-soft);
+            background: rgba(4, 52, 8, 0.82);
             border: 1px solid var(--border);
-            border-radius: 22px;
-            padding: 26px 24px 32px;
-            margin-bottom: 28px;
-            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 24px 20px 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
             text-align: right;
         }
 
@@ -156,46 +145,26 @@
         .hero-visual {
             position: relative;
             border-radius: 24px;
-            overflow: visible;
-        }
-
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(140deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.05) 60%);
-            z-index: 1;
-            pointer-events: none;
         }
 
         .hero-gallery {
-            position: relative;
-            border-radius: 24px;
+            border-radius: 22px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-            z-index: 2;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
             cursor: grab;
         }
 
-        .hero-gallery.dragging {
-            cursor: grabbing;
-        }
-
-        .hero-gallery:focus-visible {
-            outline: 2px solid #ffeb3b;
-            outline-offset: 6px;
-        }
+        .hero-gallery,
+        .hero-gallery .slider-track {
+            direction: ltr;
+       }
 
         .slider-track {
             display: flex;
             width: 100%;
-            transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
             touch-action: pan-y;
-        }
-
-        .slider-track.is-dragging {
-            transition: none;
         }
 
         .hero-slide {
@@ -213,8 +182,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 46px;
-            height: 46px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.5);
             background: rgba(0, 0, 0, 0.55);
@@ -226,7 +195,7 @@
 
         .slider-btn:hover {
             background: rgba(0, 0, 0, 0.75);
-            transform: translateY(-50%) scale(1.05);
+            transform: translateY(-50%) scale(1.04);
         }
 
         .slider-btn.prev { right: 18px; }
@@ -236,14 +205,12 @@
             display: flex;
             justify-content: center;
             gap: 8px;
-            margin-top: 18px;
-            position: relative;
-            z-index: 2;
+            margin-top: 16px;
         }
 
         .slider-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.6);
             background: transparent;
@@ -282,7 +249,7 @@
         .subtitle {
             font-size: 1.1rem;
             color: #ccefd8;
-            font-weight: 500;
+            font-weight: 500.
         }
 
         .price {
@@ -359,7 +326,7 @@
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: rgba(255, 255, 255, 0.6);
+            border-color: rgba(255, 255, 255, 0.65);
             background: rgba(255, 255, 255, 0.16);
         }
 
@@ -408,7 +375,7 @@
             margin-top: 22px;
             padding: 18px 20px;
             border-radius: 18px;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.48);
             border: 1px solid var(--border);
             display: grid;
             gap: 12px;
@@ -467,7 +434,7 @@
         .tabs {
             display: flex;
             gap: 10px;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.48);
             padding: 10px;
             border-radius: 16px;
             margin-bottom: 18px;
@@ -490,7 +457,7 @@
 
         .tab-content {
             display: none;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.48);
             border-radius: 18px;
             border: 1px solid var(--border);
             padding: 24px 20px;
@@ -531,7 +498,7 @@
             padding: 12px 20px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.48);
         }
 
         .contact-links a:hover {
@@ -556,7 +523,7 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
             transition: transform var(--transition), background var(--transition);
             z-index: 5;
         }
@@ -567,29 +534,47 @@
         }
 
         .auto-video {
-            margin-top: 34px;
-            padding-top: 28px;
+            margin-top: 32px;
+            padding-top: 24px;
             border-top: 1px solid var(--border);
             text-align: right;
         }
 
-        .auto-video h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .video-frame {
+            position: relative;
+            max-width: 420px;
+            margin-inline: auto;
         }
 
-        .auto-video p {
-            color: var(--muted);
-            margin-bottom: 12px;
-        }
-
-        .auto-video video {
+        #celebration-video {
             width: 100%;
-            border-radius: 20px;
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
             display: block;
             background: #000;
+        }
+
+        .sound-toggle {
+            position: absolute;
+            bottom: 12px;
+            inset-inline-start: 12px;
+            border: none;
+            border-radius: 999px;
+            padding: 8px 18px;
+            background: rgba(0, 0, 0, 0.68);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background var(--transition), transform var(--transition);
+        }
+
+        .sound-toggle:hover {
+            transform: translateY(-2px);
+        }
+
+        .sound-toggle[aria-pressed="true"] {
+            background: rgba(8, 127, 59, 0.85);
         }
 
         @media (max-width: 992px) {
@@ -600,16 +585,8 @@
 
         @media (max-width: 768px) {
             .page-wrapper { padding: 18px 16px 80px; }
-            .glass-panel { padding: 22px 18px 28px; }
+            .glass-panel { padding: 22px 18px 26px; }
             .product-title { font-size: 2rem; }
-        }
-
-        @media (max-width: 600px) {
-            .slider-btn {
-                width: 38px;
-                height: 38px;
-                font-size: 1rem;
-            }
         }
 
         @media (max-width: 540px) {
@@ -619,6 +596,8 @@
                 border-radius: 18px;
                 text-align: center;
             }
+
+            .video-frame { max-width: 100%; }
         }
     </style>
 </head>
@@ -636,8 +615,7 @@
         <header class="top-bar">
             <div class="nav-shell">
                 <div class="brand">
-                    <img src="https://i.postimg.cc/HxX0t6zx/algeria-crest.png" alt="شعار المنتخب الجزائري">
-                    <span>الخُضر ستور</span>
+                    <span>Maillot Algerie</span>
                 </div>
                 <nav class="nav-links">
                     <a href="#details">القميص</a>
@@ -655,13 +633,13 @@
                     <div class="hero-gallery" aria-label="معرض صور القميص" tabindex="0">
                         <div class="slider-track">
                             <figure class="hero-slide">
-                                <img src="https://images.unsplash.com/photo-1591632056276-2f0b68b7243b?auto=format&fit=crop&w=1400&q=80" alt="قميص المنتخب الوطني الجزائري - الواجهة الأمامية">
+                                <img src="https://i.ibb.co/d1JNRn8/Untitled-2.jpg" alt="قميص المنتخب الوطني الجزائري - الواجهة الأمامية">
                             </figure>
                             <figure class="hero-slide">
-                                <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=80" alt="تفاصيل الشعار الرسمي وشارات القميص">
+                                <img src="https://i.ibb.co/DP1LSThq/Untitled-3.jpg" alt="تفاصيل الشعار الرسمي وشارات القميص">
                             </figure>
                             <figure class="hero-slide">
-                                <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1400&q=80" alt="القماش الخلفي والتنفسية العالية للقميص أثناء التشجيع">
+                                <img src="https://i.ibb.co/4wd6T2qT/Untitled-1-1.jpg" alt="القماش الخلفي والتنفسية العالية للقميص أثناء التشجيع">
                             </figure>
                         </div>
                         <button class="slider-btn prev" type="button" aria-label="الصورة السابقة">
@@ -840,17 +818,20 @@
                     <button class="btn-primary" type="submit">أكمل الطلب الآن</button>
                 </form>
 
-<div class="auto-video" id="video-section">
-    <h3>شاهد القميص وهو يلمع وسط الأجواء الحماسية</h3>
-    
-    <video id="celebration-video" autoplay muted playsinline loop style="width: 100%; height: auto; display: block;">
-        <source src="https://maillotdz.github.io/IMG_4034%20(1).mp4" type="video/mp4">
-        متصفحك لا يدعم تشغيل الفيديو.
-    </video>
-    
-    <p class="cta-note">هذا المقطع يوثق مرونة القماش ووضوح الألوان خلال التشجيع، ما عليك سوى الاستمتاع!</p>
-</div>
-</section>
+                <div class="auto-video" id="video-section">
+                    <h3>شاهد القميص في حجمه الحقيقي</h3>
+
+                    <div class="video-frame">
+                        <video id="celebration-video" autoplay muted playsinline loop preload="metadata" poster="https://i.postimg.cc/HxX0t6zx/algeria-crest.png">
+                            <source src="https://maillotdz.github.io/IMG_4034%20(1).mp4" type="video/mp4">
+                            متصفحك لا يدعم تشغيل الفيديو.
+                        </video>
+                        <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">🔇 تفعيل الصوت</button>
+                    </div>
+
+                    <p class="cta-note">اضغط على الزر لتفعيل الصوت واستمتع بجودة القميص كما لو أنك تلمسه.</p>
+                </div>
+            </section>
 
             <section class="glass-panel">
                 <div class="tabs">
@@ -860,20 +841,20 @@
                 </div>
 
                 <div id="livraison" class="tab-content active">
-                    <img src="https://i.postimg.cc/Fs2T7dYv/delivery-algeria.png" alt="تفاصيل التوصيل">
+                    <img src="https://i.ibb.co/ccnS28Sv/Photo-Room-20251107-171222.png" alt="تفاصيل التوصيل">
                     <h2 class="tab-title">توصيل سريع إلى كل ولايات الجزائر</h2>
                     <p>فور تلقي طلبك، يتواصل فريقنا معك للتأكيد خلال أقل من 12 ساعة. يتم تجهيز الشحنة في نفس اليوم، والتسليم يتم خلال 24 إلى 72 ساعة حسب ولايتك.</p>
                     <p>نوفر تغليفًا محكمًا مع متابعة دقيقة لحركة الطرد حتى يصل إليك بأمان.</p>
                 </div>
 
                 <div id="echange" class="tab-content">
-                    <img src="https://i.postimg.cc/QCnkz6kv/exchange.png" alt="سياسة الاستبدال">
+                    <img src="https://i.ibb.co/jvwvSsHJ/Retrait-sur-arlon.png" alt="سياسة الاستبدال">
                     <h2 class="tab-title">استبدال سلس بدون تعقيد</h2>
                     <p>إذا احتجت لتغيير المقاس، راسلنا خلال 48 ساعة من الاستلام. نقوم بترتيب الاستبدال فورًا، ورسوم النقل مجانية إذا كان الخطأ منا.</p>
                 </div>
 
                 <div id="remboursement" class="tab-content">
-                    <img src="https://i.postimg.cc/7P6gsGZK/refund.png" alt="سياسة الاسترجاع">
+                    <img src="https://i.ibb.co/S7tYt5n6/21-min.jpg" alt="سياسة الاسترجاع">
                     <h2 class="tab-title">ضمان استرجاع الأموال</h2>
                     <p>في حالة وصول المنتج متضررًا أو غير مطابق، سنعيد لك المبلغ بالكامل بعد إعادة القميص إلى عنواننا المعتمد. دعمنا متوفر لمرافقتك خطوة بخطوة.</p>
                 </div>
@@ -881,17 +862,16 @@
 
             <section class="glass-panel contact-section" id="contact">
                 <h3>هل تحتاج لمزيد من المساعدة؟</h3>
-                <p>فريق الخضر ستور معك للإجابة على أي استفسار بخصوص المقاسات، الشحن أو طرق الدفع.</p>
+                <p>فريقنا معك للإجابة على أي استفسار بخصوص المقاسات، الشحن أو طرق الدفع.</p>
                 <div class="contact-links">
-                    <a href="https://wa.me/213673338837" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساب: ‎+213 771 589 577</a>
+                    <a href="https://wa.me/213771589577" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساب: ‎+213 771 589 577</a>
                     <a href="mailto:lokdou2@gmail.com" target="_blank" rel="noopener"><i class="fas fa-envelope"></i> البريد الإلكتروني: lokdou2@gmail.com</a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> إنستغرام</a>
                 </div>
             </section>
         </main>
 
         <footer id="faq">
-            <p>© 2026 الخضر ستور — كل الحقوق محفوظة. عش الحماس، وارتدِ ألوان الوطن بفخر.</p>
+            <p>© 2026  مايو الجيرري — كل الحقوق محفوظة. عش الحماس، وارتدِ ألوان الوطن بفخر.</p>
         </footer>
     </div>
 
@@ -1159,6 +1139,8 @@
             }
 
             const autoVideo = document.getElementById("celebration-video");
+            const soundToggleBtn = document.getElementById("sound-toggle");
+
             if (autoVideo) {
                 let hasPlayed = false;
 
@@ -1188,6 +1170,18 @@
                     observer.observe(autoVideo);
                 } else {
                     setTimeout(playVideo, 600);
+                }
+
+                if (soundToggleBtn) {
+                    soundToggleBtn.addEventListener("click", () => {
+                        const willUnmute = autoVideo.muted;
+                        autoVideo.muted = !willUnmute;
+                        soundToggleBtn.setAttribute("aria-pressed", willUnmute.toString());
+                        soundToggleBtn.textContent = willUnmute ? "🔊 إيقاف الصوت" : "🔇 تفعيل الصوت";
+                        if (willUnmute) {
+                            autoVideo.play().catch(err => console.error("تعذر تشغيل الفيديو بالصوت:", err));
+                        }
+                    });
                 }
             }
 

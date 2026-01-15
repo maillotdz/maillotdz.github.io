@@ -281,6 +281,13 @@
             color: #fffa9d;
         }
 
+        .old-price {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
         .limited-badge {
             display: inline-flex;
             align-items: center;
@@ -622,7 +629,7 @@
     <div class="ticker-bar">
         <div class="ticker-track">
             <span>قميص المنتخب الوطني الجزائري – إصدار محدود</span>
-            <span>سعر موحّد: دج 3,800 فقط</span>
+            <span>سعر موحّد: دج 2,900 فقط</span>
             <span>شحن إلى كل ولايات الجزائر</span>
             <span>إحجز نسختك الآن قبل نفاد الكمية</span>
         </div>
@@ -676,7 +683,8 @@
                     <p class="subtitle">خامة مريحة، تصميم أنيق، ومناسب للاستعمال اليومي أو التشجيع 🔥</p>
                     <h1 class="product-title">قميص المنتخب الوطني الجزائري</h1>
                     <div class="price">
-                        <span class="current-price">السعر: دج 3,800</span>
+                        <span class="old-price">3,900 دج</span>
+                        <span class="current-price">السعر: 2,900 دج</span>
                         <span class="limited-badge"><i class="fas fa-hourglass-half"></i> كمية محدودة للغاية</span>
                     </div>
                     <ul class="features-list">
@@ -895,7 +903,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const BASE_PRICE = 3800;
+            const BASE_PRICE = 2900;
 
             const subtotalEl = document.getElementById("subtotal");
             const livraisonPriceEl = document.getElementById("livraison-price");
